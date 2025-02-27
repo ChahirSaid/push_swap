@@ -30,6 +30,7 @@ int     has_duplicates(t_stack *stack);
 void    sort_three(t_stack **a);
 void    sort_large(t_stack **a, t_stack **b);
 void    assign_index(t_stack *stack);
+int     has_elements_below_index(t_stack *stack, int limit);
 void    calculate_cost(t_stack *a, t_stack *b);
 int     find_target_pos(t_stack *a, int b_val);
 void    update_positions(t_stack *stack);
@@ -48,5 +49,7 @@ void    rr(t_stack **a, t_stack **b);
 void    rra(t_stack **a, int print);
 void    rrb(t_stack **b, int print);
 void    rrr(t_stack **a, t_stack **b);
+
+
 
 #endif
