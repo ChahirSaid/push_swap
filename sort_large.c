@@ -25,7 +25,6 @@ void	sort_large(t_stack **a, t_stack **b)
 	sort_three(a);
 	while (*b)
 	{
-		assign_index(*a);
 		assign_index(*b);
 		update_positions(*a);
 		update_positions(*b);
