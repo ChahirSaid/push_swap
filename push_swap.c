@@ -1,15 +1,15 @@
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
 
 	a = NULL;
 	b = NULL;
-	if (argc < 2)
+	if (ac < 2)
 		return (0);
-	a = parse_input(argc, argv);
+	a = parse_input(ac, av);
 	if (!a || has_duplicates(a))
 	{
 		ft_putstr_fd("Error\n", 2);

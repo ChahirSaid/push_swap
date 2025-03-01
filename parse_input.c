@@ -45,7 +45,7 @@ int	is_valid_number(char *str)
 	return (1);
 }
 
-t_stack	*parse_input(int argc, char **argv)
+t_stack	*parse_input(int ac, char **av)
 {
 	t_stack	*a;
 	long	num;
@@ -55,9 +55,9 @@ t_stack	*parse_input(int argc, char **argv)
 
 	a = NULL;
 	i = 1;
-	while (i < argc)
+	while (i < ac)
 	{
-		tokens = ft_split(argv[i], ' ');
+		tokens = ft_split(av[i], ' ');
 		if (!tokens)
 			return (NULL);
 		j = 0;

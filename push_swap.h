@@ -23,7 +23,7 @@ int     stack_size(t_stack *stack);
 void    stack_clear(t_stack **stack);
 int     is_sorted(t_stack *stack);
 
-t_stack *parse_input(int argc, char **argv);
+t_stack *parse_input(int ac, char **av);
 int     is_valid_number(char *str);
 int     has_duplicates(t_stack *stack);
 

@@ -45,13 +45,17 @@ void	rotate_b(t_stack **b, int cost)
 }
 void	execute_cheapest_move(t_stack **a, t_stack **b)
 {
-	t_stack *tmp = *b;
-	t_stack *cheapest = tmp;
-	int min_cost = INT_MAX;
+	t_stack	*tmp;
+	t_stack	*cheapest;
+	int		min_cost;
+	int		total_cost;
 
+	tmp = *b;
+	cheapest = tmp;
+	min_cost = INT_MAX;
 	while (tmp)
 	{
-		int total_cost = abs(tmp->cost_a) + abs(tmp->cost_b);
+		total_cost = abs(tmp->cost_a) + abs(tmp->cost_b);
 		if (total_cost < min_cost)
 		{
 			min_cost = total_cost;

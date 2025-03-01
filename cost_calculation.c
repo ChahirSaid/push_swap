@@ -47,6 +47,30 @@ void	calculate_cost(t_stack *a, t_stack *b)
 	}
 }
 
+int	find_min_val_pos(t_stack *a)
+{
+	int		pos;
+	int		min_pos;
+	int		min_val;
+	t_stack	*tmp;
+
+	tmp = a;
+	pos = 0;
+	min_pos = 0;
+	min_val = INT_MAX;
+	while (tmp)
+	{
+		if (tmp->value < min_val)
+		{
+			min_val = tmp->value;
+			min_pos = pos;
+		}
+		pos++;
+		tmp = tmp->next;
+	}
+	return (min_pos);
+}
+
 int	find_target_pos(t_stack *a, int b_val)
 {
 	int		pos;
@@ -56,7 +80,6 @@ int	find_target_pos(t_stack *a, int b_val)
 
 	tmp = a;
 	pos = 0;
-	target_pos = 0;
 	target_val = INT_MAX;
 	while (tmp)
 	{
@@ -70,20 +93,7 @@ int	find_target_pos(t_stack *a, int b_val)
 	}
 	if (target_val != INT_MAX)
 		return (target_pos);
-	tmp = a;
-	pos = 0;
-	target_val = INT_MAX;
-	while (tmp)
-	{
-		if (tmp->value < target_val)
-		{
-			target_val = tmp->value;
-			target_pos = pos;
-		}
-		pos++;
-		tmp = tmp->next;
-	}
-	return (target_pos);
+	return (find_min_val_pos(a));
 }
 
 void	update_positions(t_stack *stack)
