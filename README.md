@@ -9,5 +9,5 @@ Push_swap is a project that challenges you to sort data on a stack using a limit
 - Aim for the lowest number of operations  
 
 ## 🔗 Algorithm Visualization  
-For a visual explanation of the algorithm, check out this Excalidraw diagram:  
-[![Excalidraw Diagram](https://excalidraw.com/#json=a9CM9y1IVZHTp8uPnIONx,kS7br4-K4gsCkVVYIOiOqQ)](https://excalidraw.com/#json=a9CM9y1IVZHTp8uPnIONx,kS7br4-K4gsCkVVYIOiOqQ)  
+Check out the Excalidraw diagram for a visual explanation:  
+[Excalidraw Diagram](https://excalidraw.com/#json=a9CM9y1IVZHTp8uPnIONx,kS7br4-K4gsCkVVYIOiOqQ)  
