@@ -23,9 +23,9 @@ void	sort_large(t_stack **a, t_stack **b)
             ra(a, 1);
 	}
 	sort_three(a);
+	assign_index(*b);
 	while (*b)
 	{
-		assign_index(*b);
 		update_positions(*a);
 		update_positions(*b);
 		calculate_cost(*a, *b);
