@@ -1,3 +1,13 @@
-# Push_swap
-## Because Swap_push isn’t as natural
-This project will make you sort data on a stack, with a limited set of instructions, using the lowest possible number of actions. To succeed you’ll have to manipulate various types of algorithms and choose the most appropriate solution (out of many) for an optimized data sorting.
+# Push_swap  
+## Because Swap_push isn’t as natural  
+
+Push_swap is a project that challenges you to sort data on a stack using a limited set of instructions while minimizing the number of actions. To succeed, you'll need to implement and optimize sorting algorithms, selecting the most efficient approach from multiple possibilities.  
+
+## 📌 Project Overview  
+- Manipulate stacks using specific operations  
+- Implement and optimize sorting algorithms  
+- Aim for the lowest number of operations  
+
+## 🔗 Algorithm Visualization  
+For a visual explanation of the algorithm, check out this Excalidraw diagram:  
+[![Excalidraw Diagram](https://excalidraw.com/#json=a9CM9y1IVZHTp8uPnIONx,kS7br4-K4gsCkVVYIOiOqQ)](https://excalidraw.com/#json=a9CM9y1IVZHTp8uPnIONx,kS7br4-K4gsCkVVYIOiOqQ)  
