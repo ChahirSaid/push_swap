@@ -1,10 +1,7 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
-# include "libft/includes/libft.h"
+# include "../libft/includes/libft.h"
 
 typedef struct s_stack {
     int             value;
@@ -50,7 +47,5 @@ void    rr(t_stack **a, t_stack **b);
 void    rra(t_stack **a, int print);
 void    rrb(t_stack **b, int print);
 void    rrr(t_stack **a, t_stack **b);
-
-
 
 #endif

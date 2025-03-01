@@ -3,7 +3,10 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 SRC = push_swap.c parse_input.c stack_utils.c sort_small.c sort_large.c cost_calculation.c execute_moves.c \
 	operations/push.c operations/rev_rotate.c operations/rotate.c operations/swap.c
+BONUS_SRC	=
+
 OBJ = $(SRC:.c=.o)
+OBJ_SRC	=
 LIBFT = libft/libft.a
 
 all: $(NAME)
