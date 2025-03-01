@@ -46,37 +46,21 @@ int	has_elements_below_index(t_stack *stack, int limit)
 	return (0);
 }
 
-void	final_rotation(t_stack **a)
+void final_rotation(t_stack **a)
 {
-	int		min_pos;
-	int		min_val;
-	t_stack	*tmp;
-	int		i;
-
-	min_pos = 0;
-	min_val = INT_MAX;
-	tmp = *a;
-	i = 0;
-	while (tmp)
-	{
-		if (tmp->value < min_val)
-		{
-			min_val = tmp->value;
-			min_pos = i;
-		}
-		tmp = tmp->next;
-		i++;
-	}
-	if (min_pos > stack_size(*a) / 2)
-		min_pos -= stack_size(*a);
-	while (min_pos > 0)
-	{
-		ra(a, 1);
-		min_pos--;
-	}
-	while (min_pos < 0)
-	{
-		rra(a, 1);
-		min_pos++;
-	}
+    int min_pos;
+    
+    min_pos = find_min_val_pos(*a);
+    if (min_pos > stack_size(*a) / 2)
+        min_pos -= stack_size(*a);
+    while (min_pos > 0)
+    {
+        ra(a, 1);
+        min_pos--;
+    }
+    while (min_pos < 0)
+    {
+        rra(a, 1);
+        min_pos++;
+    }
 }

@@ -32,6 +32,7 @@ void    sort_large(t_stack **a, t_stack **b);
 void    assign_index(t_stack *stack);
 int     has_elements_below_index(t_stack *stack, int limit);
 void    calculate_cost(t_stack *a, t_stack *b);
+int     find_min_val_pos(t_stack *a);
 int     find_target_pos(t_stack *a, int b_val);
 void    update_positions(t_stack *stack);
 void    execute_cheapest_move(t_stack **a, t_stack **b);
