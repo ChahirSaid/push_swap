@@ -17,7 +17,10 @@ void	sort_large(t_stack **a, t_stack **b)
 	}
 	while (stack_size(*a) > 3)
 	{
-		pb(a, b);
+		if ((*a)->index < size - 3)
+            pb(a, b);
+        else
+            ra(a, 1);
 	}
 	sort_three(a);
 	while (*b)
