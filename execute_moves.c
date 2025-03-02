@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:13:10 by schahir           #+#    #+#             */
-/*   Updated: 2025/03/01 23:58:19 by schahir          ###   ########.fr       */
+/*   Updated: 2025/03/02 02:19:44 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	execute_cheapest_move(t_stack **a, t_stack **b)
 	min_cost = INT_MAX;
 	while (tmp)
 	{
-		total_cost = abs(tmp->cost_a) + abs(tmp->cost_b);
+		total_cost = ABS(tmp->cost_a) + ABS(tmp->cost_b);
 		if (total_cost < min_cost)
 		{
 			min_cost = total_cost;

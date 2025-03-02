@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 21:17:11 by schahir           #+#    #+#             */
-/*   Updated: 2025/03/02 00:40:07 by schahir          ###   ########.fr       */
+/*   Updated: 2025/03/02 02:18:55 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+
+# define ABS(Value) ((Value) * ((Value) > 0) - (Value) * ((Value) < 0))
 
 typedef struct s_list
 {
