@@ -30,7 +30,7 @@ int	is_valid_number(char *str)
 	long	value;
 
 	int (i), (sign);
-	(1) && (i = 0, value = 0, sign = 1);
+	i = 0, value = 0, sign = 1;
 	if (!str || !*str)
 		return (0);
 	if (str[i] == '-' || str[i] == '+')
