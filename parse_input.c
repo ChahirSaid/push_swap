@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:13:14 by schahir           #+#    #+#             */
-/*   Updated: 2025/03/02 01:31:25 by schahir          ###   ########.fr       */
+/*   Updated: 2025/03/02 02:33:44 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,11 @@ t_stack	*parse_input(int ac, char **av)
 		tokens = ft_split(av[i], ' ');
 		if (!tokens)
 			return (NULL);
+		if (tokens[0] == NULL)
+		{
+			free_tokens(tokens);
+			return (NULL);
+		}
 		a = add_numbers_to_stack(tokens, a);
 		if (!a)
 			return (NULL);
