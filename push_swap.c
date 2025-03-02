@@ -1,4 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: schahir <schahir@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/01 23:58:53 by schahir           #+#    #+#             */
+/*   Updated: 2025/03/02 00:43:19 by schahir          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "includes/push_swap.h"
+
+void	handle_error(t_stack **stack)
+{
+	ft_putstr_fd("Error\n", 2);
+	stack_clear(stack);
+	exit(1);
+}
 
 int	main(int ac, char **av)
 {
@@ -11,11 +30,7 @@ int	main(int ac, char **av)
 		return (0);
 	a = parse_input(ac, av);
 	if (!a || has_duplicates(a))
-	{
-		ft_putstr_fd("Error\n", 2);
-		stack_clear(&a);
-		exit(1);
-	}
+		handle_error(&a);
 	if (is_sorted(a))
 	{
 		stack_clear(&a);

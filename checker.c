@@ -1,4 +1,16 @@
-#include "../checker.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: schahir <schahir@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/01 23:13:04 by schahir           #+#    #+#             */
+/*   Updated: 2025/03/02 00:32:20 by schahir          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "includes/checker.h"
 
 int	free_and_return(t_stack **a, t_stack **b, char *line)
 {
@@ -43,18 +55,18 @@ int	execute_operation(t_stack **a, t_stack **b, char *op)
 int	parse_operations(t_stack **a, t_stack **b)
 {
 	char	*line;
+	int		i;
 
 	while (1)
 	{
 		line = get_next_line(0);
 		if (!line)
-			break;
-		int i = 0;
+			break ;
+		i = 0;
 		while (line[i] && line[i] != '\n')
 			i++;
 		if (line[i] == '\n')
 			line[i] = '\0';
-			
 		if (!execute_operation(a, b, line))
 		{
 			free(line);
@@ -76,11 +88,7 @@ int	main(int ac, char **av)
 		return (0);
 	a = parse_input(ac, av);
 	if (!a || has_duplicates(a))
-	{
-		ft_putstr_fd("Error\n", 2);
-		stack_clear(&a);
-		return (1);
-	}
+		return (ft_putstr_fd("Error\n", 2), stack_clear(&a), 1);
 	if (!parse_operations(&a, &b))
 	{
 		ft_putstr_fd("Error\n", 2);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_input.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: schahir <schahir@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/01 23:13:14 by schahir           #+#    #+#             */
+/*   Updated: 2025/03/02 01:31:25 by schahir          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "includes/push_swap.h"
 
 static void	free_tokens(char **tokens)
@@ -15,13 +27,10 @@ static void	free_tokens(char **tokens)
 
 int	is_valid_number(char *str)
 {
-	int		i;
 	long	value;
-	int		sign;
 
-	i = 0;
-	value = 0;
-	sign = 1;
+	int (i), (sign);
+	(1) && (i = 0, value = 0, sign = 0);
 	if (!str || !*str)
 		return (0);
 	if (str[i] == '-' || str[i] == '+')
@@ -30,7 +39,7 @@ int	is_valid_number(char *str)
 			sign = -1;
 		i++;
 	}
-	if (!str[i])
+	if ((!str[i] || ft_strlen(str + i) > 10))
 		return (0);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
@@ -40,43 +49,48 @@ int	is_valid_number(char *str)
 				&& value > (long)INT_MAX + 1))
 			return (0);
 	}
-	if (str[i] != '\0')
+	if (str[i] != '\0' || value > INT_MAX)
 		return (0);
 	return (1);
+}
+
+t_stack	*add_numbers_to_stack(char **tokens, t_stack *a)
+{
+	int		j;
+	long	num;
+
+	j = 0;
+	while (tokens[j])
+	{
+		if (!is_valid_number(tokens[j]))
+			return (free_tokens(tokens), NULL);
+		num = ft_atoi(tokens[j]);
+		if(num == LONG_MAX)
+			return (NULL);
+		stack_add_back(&a, stack_new((int)num));
+		j++;
+	}
+	return (a);
 }
 
 t_stack	*parse_input(int ac, char **av)
 {
 	t_stack	*a;
-	long	num;
 	int		i;
 	char	**tokens;
-	int		j;
 
 	a = NULL;
 	i = 1;
 	while (i < ac)
 	{
+		if (av[i][0] == '\0')
+			return (NULL);
 		tokens = ft_split(av[i], ' ');
 		if (!tokens)
 			return (NULL);
-		j = 0;
-		while (tokens[j])
-		{
-			if (tokens[j][0] == '\0')
-			{
-				j++;
-				continue ;
-			}
-			if (!is_valid_number(tokens[j]))
-			{
-				free_tokens(tokens);
-				return (NULL);
-			}
-			num = ft_atoi(tokens[j]);
-			stack_add_back(&a, stack_new((int)num));
-			j++;
-		}
+		a = add_numbers_to_stack(tokens, a);
+		if (!a)
+			return (NULL);
 		free_tokens(tokens);
 		i++;
 	}
