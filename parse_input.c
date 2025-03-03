@@ -30,7 +30,7 @@ int	is_valid_number(char *str)
 	long	value;
 
 	int (i), (sign);
-	(1) && (i = 0, value = 0, sign = 1);
+	i = 0, value = 0, sign = 1;
 	if (!str || !*str)
 		return (0);
 	if (str[i] == '-' || str[i] == '+')
@@ -58,16 +58,21 @@ t_stack	*add_numbers_to_stack(char **tokens, t_stack *a)
 {
 	int		j;
 	long	num;
+	t_stack	*new_node;
 
 	j = 0;
 	while (tokens[j])
 	{
 		if (!is_valid_number(tokens[j]))
-			return (free_tokens(tokens), NULL);
+			return (stack_clear(&a), free_tokens(tokens), NULL);
 		num = ft_atoi(tokens[j]);
-		if (num == LONG_MAX)
-			return (NULL);
-		stack_add_back(&a, stack_new((int)num));
+		new_node = stack_new((int)num);
+		if (!new_node)
+		{
+			stack_clear(&a);
+			return (free_tokens(tokens), NULL);
+		}
+		stack_add_back(&a, new_node);
 		j++;
 	}
 	return (a);
@@ -84,12 +89,12 @@ t_stack	*parse_input(int ac, char **av)
 	while (i < ac)
 	{
 		if (av[i][0] == '\0')
-			return (NULL);
+			return (stack_clear(&a), NULL);
 		tokens = ft_split(av[i], ' ');
 		if (!tokens)
-			return (free_tokens(tokens), NULL);
+			return (stack_clear(&a), NULL);
 		if (tokens[0] == NULL)
-			return (free_tokens(tokens), NULL);
+			return (free_tokens(tokens), stack_clear(&a), NULL);
 		a = add_numbers_to_stack(tokens, a);
 		if (!a)
 			return (NULL);
