@@ -1,18 +1,19 @@
-NAME = push_swap
-BONUS_NAME = checker
+NAME		= push_swap
+BONUS_NAME	= checker
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
-SRC = push_swap.c parse_input.c stack_utils.c sort_small.c sort_large.c cost_calculation.c execute_moves.c \
-	operations/push.c operations/rev_rotate.c operations/rotate.c operations/swap.c
+CC			= cc
+CFLAGS		= -Wall -Wextra -Werror
+
+SRC			= push_swap.c parse_input.c stack_utils.c sort_small.c sort_large.c cost_calculation.c execute_moves.c \
+			operations/push.c operations/rev_rotate.c operations/rotate.c operations/swap.c
 BONUS_SRC	=  checker.c operations/push.c operations/rev_rotate.c operations/rotate.c operations/swap.c \
-				parse_input.c stack_utils.c sort_small.c sort_large.c cost_calculation.c execute_moves.c
+			parse_input.c stack_utils.c sort_small.c sort_large.c cost_calculation.c execute_moves.c
 
-OBJ = $(SRC:.c=.o)
+OBJ			= $(SRC:.c=.o)
 BONUS_OBJ	= $(BONUS_SRC:.c=.o)
 
-LIBFT_PATH = ./libft
-LIBFT = $(LIBFT_PATH)/libft.a
+LIBFT_PATH	= ./libft
+LIBFT		= $(LIBFT_PATH)/libft.a
 
 all: $(NAME)
 bonus: $(BONUS_NAME)
