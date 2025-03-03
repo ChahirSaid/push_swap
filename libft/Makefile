@@ -2,7 +2,7 @@ SRCS		= char_utils/ft_isalpha.c char_utils/ft_isdigit.c char_utils/ft_isalnum.c 
 			char_utils/ft_isprint.c char_utils/ft_toupper.c char_utils/ft_tolower.c \
 			mem_utils/ft_bzero.c mem_utils/ft_calloc.c mem_utils/ft_memchr.c mem_utils/ft_memcmp.c \
 			mem_utils/ft_memcpy.c mem_utils/ft_memmove.c mem_utils/ft_memset.c \
-			str_utils/ft_atoi.c str_utils/ft_itoa.c str_utils/ft_split.c str_utils/ft_strchr.c \
+			str_utils/ft_atoi.c str_utils/ft_itoa.c str_utils/ft_split.c str_utils/ft_strchr.c str_utils/ft_abs.c\
 			str_utils/ft_strdup.c str_utils/ft_striteri.c str_utils/ft_strjoin.c str_utils/ft_joinbuffer.c \
 			str_utils/ft_strlcat.c str_utils/ft_strlcpy.c str_utils/ft_strlen.c str_utils/ft_strmapi.c \
 			str_utils/ft_strncmp.c str_utils/ft_strcmp.c str_utils/ft_strnstr.c str_utils/ft_strrchr.c \

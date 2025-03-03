@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: schahir <schahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/01 23:12:38 by schahir           #+#    #+#             */
-/*   Updated: 2025/03/02 17:25:06 by schahir          ###   ########.fr       */
+/*   Created: 2024/10/22 11:48:52 by schahir           #+#    #+#             */
+/*   Updated: 2025/03/02 17:22:06 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#include "../includes/libft.h"
 
-# include "../libft/includes/get_next_line.h"
-# include "../libft/includes/libft.h"
-# include "push_swap.h"
-
-int	parse_operations(t_stack **a, t_stack **b);
-int	execute_operation(t_stack **a, t_stack **b, char *op);
-int	free_and_return(t_stack **a, t_stack **b, char *line);
-
-#endif
+/**
+ * ft_abs - Computes the absolute value of an integer.
+ *
+ * @n: The integer to compute the absolute value of.
+ *
+ * Return: The absolute value of the integer.
+ */
+int	ft_abs(int n)
+{
+	if (n < 0)
+		return (-n);
+	return (n);
+}

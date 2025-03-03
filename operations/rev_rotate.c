@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:12:48 by schahir           #+#    #+#             */
-/*   Updated: 2025/03/01 23:12:50 by schahir          ###   ########.fr       */
+/*   Updated: 2025/03/02 17:26:26 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,10 @@ void	rrb(t_stack **b, int print)
 		write(1, "rrb\n", 4);
 }
 
-void	rrr(t_stack **a, t_stack **b)
+void	rrr(t_stack **a, t_stack **b, int print)
 {
 	rra(a, 0);
 	rrb(b, 0);
-	write(1, "rrr\n", 4);
+	if (print)
+		write(1, "rrr\n", 4);
 }

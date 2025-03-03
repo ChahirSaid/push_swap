@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:13:23 by schahir           #+#    #+#             */
-/*   Updated: 2025/03/01 23:32:37 by schahir          ###   ########.fr       */
+/*   Updated: 2025/03/02 17:25:37 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ void	push_tob(t_stack **a, t_stack **b, int size, int push_limit)
 	while (stack_size(*a) > 3 && has_elements_below_index(*a, push_limit))
 	{
 		if ((*a)->index < push_limit)
-			pb(a, b);
+			pb(a, b, 1);
 		else
 			ra(a, 1);
 	}
 	while (stack_size(*a) > 3)
 	{
 		if ((*a)->index < size - 3)
-			pb(a, b);
+			pb(a, b, 1);
 		else
 			ra(a, 1);
 	}

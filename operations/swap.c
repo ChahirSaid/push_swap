@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:12:54 by schahir           #+#    #+#             */
-/*   Updated: 2025/03/01 23:12:55 by schahir          ###   ########.fr       */
+/*   Updated: 2025/03/02 17:26:39 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,10 @@ void	sb(t_stack **b, int print)
 		write(1, "sb\n", 3);
 }
 
-void	ss(t_stack **a, t_stack **b)
+void	ss(t_stack **a, t_stack **b, int print)
 {
 	sa(a, 0);
 	sb(b, 0);
-	write(1, "ss\n", 3);
+	if (print)
+		write(1, "ss\n", 3);
 }

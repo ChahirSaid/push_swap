@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:13:04 by schahir           #+#    #+#             */
-/*   Updated: 2025/03/02 00:32:20 by schahir          ###   ########.fr       */
+/*   Updated: 2025/03/02 17:24:46 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,23 +30,23 @@ int	execute_operation(t_stack **a, t_stack **b, char *op)
 	else if (!ft_strcmp(op, "sb"))
 		sb(b, 0);
 	else if (!ft_strcmp(op, "ss"))
-		ss(a, b);
+		ss(a, b, 0);
 	else if (!ft_strcmp(op, "pa"))
-		pa(a, b);
+		pa(a, b, 0);
 	else if (!ft_strcmp(op, "pb"))
-		pb(a, b);
+		pb(a, b, 0);
 	else if (!ft_strcmp(op, "ra"))
 		ra(a, 0);
 	else if (!ft_strcmp(op, "rb"))
 		rb(b, 0);
 	else if (!ft_strcmp(op, "rr"))
-		rr(a, b);
+		rr(a, b, 0);
 	else if (!ft_strcmp(op, "rra"))
 		rra(a, 0);
 	else if (!ft_strcmp(op, "rrb"))
 		rrb(b, 0);
 	else if (!ft_strcmp(op, "rrr"))
-		rrr(a, b);
+		rrr(a, b, 0);
 	else
 		return (0);
 	return (1);

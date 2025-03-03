@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:13:10 by schahir           #+#    #+#             */
-/*   Updated: 2025/03/02 02:19:44 by schahir          ###   ########.fr       */
+/*   Updated: 2025/03/02 17:25:54 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
 {
 	while (cheapest->cost_a > 0 && cheapest->cost_b > 0)
 	{
-		rr(a, b);
+		rr(a, b, 1);
 		cheapest->cost_a--;
 		cheapest->cost_b--;
 	}
 	while (cheapest->cost_a < 0 && cheapest->cost_b < 0)
 	{
-		rrr(a, b);
+		rrr(a, b, 1);
 		cheapest->cost_a++;
 		cheapest->cost_b++;
 	}
@@ -68,7 +68,7 @@ void	execute_cheapest_move(t_stack **a, t_stack **b)
 	min_cost = INT_MAX;
 	while (tmp)
 	{
-		total_cost = ABS(tmp->cost_a) + ABS(tmp->cost_b);
+		total_cost = ft_abs(tmp->cost_a) + ft_abs(tmp->cost_b);
 		if (total_cost < min_cost)
 		{
 			min_cost = total_cost;
@@ -79,5 +79,5 @@ void	execute_cheapest_move(t_stack **a, t_stack **b)
 	rotate_both(a, b, cheapest);
 	rotate_a(a, cheapest->cost_a);
 	rotate_b(b, cheapest->cost_b);
-	pa(a, b);
+	pa(a, b, 1);
 }

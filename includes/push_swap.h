@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:12:40 by schahir           #+#    #+#             */
-/*   Updated: 2025/03/01 23:20:07 by schahir          ###   ########.fr       */
+/*   Updated: 2025/03/02 17:25:23 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,14 @@ int					is_valid_number(char *str);
 
 void				sa(t_stack **a, int print);
 void				sb(t_stack **b, int print);
-void				ss(t_stack **a, t_stack **b);
-void				pa(t_stack **a, t_stack **b);
-void				pb(t_stack **a, t_stack **b);
+void				ss(t_stack **a, t_stack **b, int print);
+void				pa(t_stack **a, t_stack **b, int print);
+void				pb(t_stack **a, t_stack **b, int print);
 void				ra(t_stack **a, int print);
 void				rb(t_stack **b, int print);
-void				rr(t_stack **a, t_stack **b);
+void				rr(t_stack **a, t_stack **b, int print);
 void				rra(t_stack **a, int print);
 void				rrb(t_stack **b, int print);
-void				rrr(t_stack **a, t_stack **b);
+void				rrr(t_stack **a, t_stack **b, int print);
 
 #endif

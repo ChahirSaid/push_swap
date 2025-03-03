@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 21:17:11 by schahir           #+#    #+#             */
-/*   Updated: 2025/03/02 02:18:55 by schahir          ###   ########.fr       */
+/*   Updated: 2025/03/02 17:22:34 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-
-# define ABS(Value) ((Value) * ((Value) > 0) - (Value) * ((Value) < 0))
 
 typedef struct s_list
 {
@@ -61,6 +59,7 @@ int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_strcmp(const char *s1, const char *s2);
 char				*ft_strrchr(const char *str, int c);
 char				*ft_strchr(const char *str, int c);
+int					ft_abs(int n);
 size_t				ft_strlen(const char *str);
 // mem_utils
 void				*ft_memmove(void *dest, const void *src, size_t n);

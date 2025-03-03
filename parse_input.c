@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:13:14 by schahir           #+#    #+#             */
-/*   Updated: 2025/03/02 02:44:15 by schahir          ###   ########.fr       */
+/*   Updated: 2025/03/03 00:53:30 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	is_valid_number(char *str)
 	long	value;
 
 	int (i), (sign);
-	i = 0, value = 0, sign = 1;
+	(1) && (i = 0, value = 0, sign = 1);
 	if (!str || !*str)
 		return (0);
 	if (str[i] == '-' || str[i] == '+')
@@ -65,7 +65,7 @@ t_stack	*add_numbers_to_stack(char **tokens, t_stack *a)
 		if (!is_valid_number(tokens[j]))
 			return (free_tokens(tokens), NULL);
 		num = ft_atoi(tokens[j]);
-		if(num == LONG_MAX)
+		if (num == LONG_MAX)
 			return (NULL);
 		stack_add_back(&a, stack_new((int)num));
 		j++;
@@ -87,12 +87,9 @@ t_stack	*parse_input(int ac, char **av)
 			return (NULL);
 		tokens = ft_split(av[i], ' ');
 		if (!tokens)
-			return (NULL);
+			return (free_tokens(tokens), NULL);
 		if (tokens[0] == NULL)
-		{
-			free_tokens(tokens);
-			return (NULL);
-		}
+			return (free_tokens(tokens), NULL);
 		a = add_numbers_to_stack(tokens, a);
 		if (!a)
 			return (NULL);
