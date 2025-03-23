@@ -6,39 +6,64 @@
 /*   By: schahir <schahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:13:23 by schahir           #+#    #+#             */
-/*   Updated: 2025/03/02 17:25:37 by schahir          ###   ########.fr       */
+/*   Updated: 2025/03/13 16:46:37 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-void	push_tob(t_stack **a, t_stack **b, int size, int push_limit)
+static void	assign_index(t_stack *stack)
 {
-	while (stack_size(*a) > 3 && has_elements_below_index(*a, push_limit))
+	t_stack	*ptr;
+	t_stack	*tmp;
+
+	ptr = stack;
+	while (ptr)
 	{
-		if ((*a)->index < push_limit)
-			pb(a, b, 1);
-		else
-			ra(a, 1);
+		ptr->index = 0;
+		ptr = ptr->next;
 	}
-	while (stack_size(*a) > 3)
+	ptr = stack;
+	while (ptr)
 	{
-		if ((*a)->index < size - 3)
-			pb(a, b, 1);
-		else
-			ra(a, 1);
+		tmp = stack;
+		while (tmp)
+		{
+			if (ptr->value > tmp->value)
+				ptr->index++;
+			tmp = tmp->next;
+		}
+		ptr = ptr->next;
+	}
+}
+
+static void	update_positions(t_stack *stack)
+{
+	int	pos;
+
+	pos = 0;
+	while (stack)
+	{
+		stack->pos = pos++;
+		stack = stack->next;
 	}
 }
 
 void	sort_large(t_stack **a, t_stack **b)
 {
 	int	size;
-	int	push_limit;
+	int	median;
 
-	assign_index(*a);
-	size = stack_size(*a);
-	push_limit = size / 2;
-	push_tob(a, b, size, push_limit);
+	while (stack_size(*a) > 3)
+	{
+		assign_index(*a);
+		size = stack_size(*a);
+		median = size / 2;
+		if ((*a)->index < median)
+			pb(a, b, 1);
+		else
+			ra(a, 1);
+	}
 	sort_three(a);
 	while (*b)
 	{
@@ -48,20 +73,6 @@ void	sort_large(t_stack **a, t_stack **b)
 		execute_cheapest_move(a, b);
 	}
 	final_rotation(a);
-}
-
-int	has_elements_below_index(t_stack *stack, int limit)
-{
-	t_stack	*tmp;
-
-	tmp = stack;
-	while (tmp)
-	{
-		if (tmp->index < limit)
-			return (1);
-		tmp = tmp->next;
-	}
-	return (0);
 }
 
 void	final_rotation(t_stack **a)

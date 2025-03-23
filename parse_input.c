@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:13:14 by schahir           #+#    #+#             */
-/*   Updated: 2025/03/03 00:53:30 by schahir          ###   ########.fr       */
+/*   Updated: 2025/03/13 16:56:07 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	is_valid_number(char *str)
 	long	value;
 
 	int (i), (sign);
-	i = 0, value = 0, sign = 1;
+	(1) && (i = 0, value = 0, sign = 1);
 	if (!str || !*str)
 		return (0);
 	if (str[i] == '-' || str[i] == '+')

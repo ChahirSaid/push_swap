@@ -6,22 +6,11 @@
 /*   By: schahir <schahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:13:04 by schahir           #+#    #+#             */
-/*   Updated: 2025/03/02 17:24:46 by schahir          ###   ########.fr       */
+/*   Updated: 2025/03/13 17:34:17 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/checker.h"
-
-int	free_and_return(t_stack **a, t_stack **b, char *line)
-{
-	if (line)
-		free(line);
-	if (a && *a)
-		stack_clear(a);
-	if (b && *b)
-		stack_clear(b);
-	return (0);
-}
 
 int	execute_operation(t_stack **a, t_stack **b, char *op)
 {

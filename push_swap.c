@@ -6,13 +6,13 @@
 /*   By: schahir <schahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:58:53 by schahir           #+#    #+#             */
-/*   Updated: 2025/03/02 00:43:19 by schahir          ###   ########.fr       */
+/*   Updated: 2025/03/13 17:33:29 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-void	handle_error(t_stack **stack)
+static void	handle_error(t_stack **stack)
 {
 	ft_putstr_fd("Error\n", 2);
 	stack_clear(stack);

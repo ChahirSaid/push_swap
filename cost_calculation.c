@@ -6,36 +6,11 @@
 /*   By: schahir <schahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:13:06 by schahir           #+#    #+#             */
-/*   Updated: 2025/03/01 23:13:07 by schahir          ###   ########.fr       */
+/*   Updated: 2025/03/13 16:46:19 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
-
-void	assign_index(t_stack *stack)
-{
-	t_stack	*ptr;
-	t_stack	*tmp;
-
-	ptr = stack;
-	while (ptr)
-	{
-		ptr->index = 0;
-		ptr = ptr->next;
-	}
-	ptr = stack;
-	while (ptr)
-	{
-		tmp = stack;
-		while (tmp)
-		{
-			if (ptr->value > tmp->value)
-				ptr->index++;
-			tmp = tmp->next;
-		}
-		ptr = ptr->next;
-	}
-}
 
 void	calculate_cost(t_stack *a, t_stack *b)
 {
@@ -106,16 +81,4 @@ int	find_target_pos(t_stack *a, int b_val)
 	if (target_val != INT_MAX)
 		return (target_pos);
 	return (find_min_val_pos(a));
-}
-
-void	update_positions(t_stack *stack)
-{
-	int	pos;
-
-	pos = 0;
-	while (stack)
-	{
-		stack->pos = pos++;
-		stack = stack->next;
-	}
 }

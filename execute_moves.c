@@ -6,13 +6,13 @@
 /*   By: schahir <schahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:13:10 by schahir           #+#    #+#             */
-/*   Updated: 2025/03/02 17:25:54 by schahir          ###   ########.fr       */
+/*   Updated: 2025/03/13 16:48:10 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
+static void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
 {
 	while (cheapest->cost_a > 0 && cheapest->cost_b > 0)
 	{
@@ -28,7 +28,7 @@ void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
 	}
 }
 
-void	rotate_a(t_stack **a, int cost)
+static void	rotate_a(t_stack **a, int cost)
 {
 	while (cost > 0)
 	{
@@ -42,7 +42,7 @@ void	rotate_a(t_stack **a, int cost)
 	}
 }
 
-void	rotate_b(t_stack **b, int cost)
+static void	rotate_b(t_stack **b, int cost)
 {
 	while (cost > 0)
 	{
